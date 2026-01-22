@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<title>Амина & Асылбек — Үйлену тойына шақыру</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Шрифты как в Tilda -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Анимации -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f6f3f1;
+  --text: #6b5f57;
+  --accent: #b9a89a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+section {
+  padding: 90px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac") center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* TIMER */
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.timer div {
+  background: rgba(255,255,255,.15);
+  padding: 20px;
+  border-radius: 14px;
+  min-width: 90px;
+  font-size: 22px;
+}
+
+/* TITLES */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 14px 38px;
+  border-radius: 40px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+  transition: .3s;
+}
+
+.btn:hover {
+  opacity: .85;
+}
+
+/* PROGRAM */
+.program-item {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* FORM */
+form {
+  max-width: 420px;
+  margin: auto;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  background: #e8e3df;
+  padding: 40px 20px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container" data-aos="fade-up">
+    <p>ҮЙЛЕНУ ТОЙЫНА ШАҚЫРУ</p>
+    <h1>Амина & Асылбек</h1>
+    <p>25 сәуір · 16:30 · Қостанай</p>
+
+    <div class="timer">
+      <div><span id="d"></span><br>күн</div>
+      <div><span id="h"></span><br>сағат</div>
+      <div><span id="m"></span><br>минут</div>
+      <div><span id="s"></span><br>секунд</div>
+    </div>
+  </div>
+</section>
+
+<!-- INVITE TEXT -->
+<section>
+  <div class="container" data-aos="fade-up">
+    <h2>Құрметті қонақтар!</h2>
+    <p>
+      Біздің өміріміздегі ең бақытты күндердің бірінде
+      сізді қуанышымыздың куәсі болуға шақырамыз.
+    </p>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section>
+  <div class="container" data-aos="fade-up">
+    <h2>Той бағдарламасы</h2>
+    <div class="program-item">16:30 — Қонақтардың жиналуы</div>
+    <div class="program-item">17:00 — Тойдың басталуы</div>
+    <div class="program-item">19:00 — Құттықтаулар</div>
+    <div class="program-item">22:00 — Би кеші</div>
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section>
+  <div class="container" data-aos="fade-up">
+    <h2>Дресс-код</h2>
+    <p>
+      Салтанатты кешке арналған
+      нәзік, пастельді түстерді таңдасаңыздар қуанамыз 🤍
+    </p>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section>
+  <div class="container" data-aos="fade-up">
+    <h2>Қонақтарға ескерту</h2>
+    <p>💐 Гүлдің орнына жылы лебіздеріңізді ала келсеңіздер жеткілікті</p>
+    <p>🎁 Сыйлықтарыңызды конверт түрінде ұсынуға болады</p>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section>
+  <div class="container" data-aos="fade-up">
+    <h2>Қатысуыңызды растаңыз</h2>
+
+    <!-- Можно заменить action на Google Form -->
+    <form action="mailto:example@mail.com" method="post">
+      <input type="text" placeholder="Аты-жөніңіз" required>
+      <input type="tel" placeholder="Телефон нөмірі">
+      <select>
+        <option>Келемін</option>
+        <option>Келе алмаймын</option>
+      </select>
+      <button class="btn" type="submit">Жіберу</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Сүйіспеншілікпен,</p>
+  <h2>Амина & Асылбек</h2>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ once: true });
+
+const weddingDate = new Date("2026-04-25T16:30:00");
+setInterval(() => {
+  const now = new Date();
+  const diff = weddingDate - now;
+  if (diff < 0) return;
+
+  d.textContent = Math.floor(diff / 86400000);
+  h.textContent = Math.floor(diff / 3600000) % 24;
+  m.textContent = Math.floor(diff / 60000) % 60;
+  s.textContent = Math.floor(diff / 1000) % 60;
+}, 1000);
+</script>
+
+</body>
+</html>
